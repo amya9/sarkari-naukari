@@ -1,0 +1,11 @@
+body{
+background-color: rgb(65, 53, 53);
+color: rgb(0, 0, 0);
+}
+
+a.custom-card:hover {
+    color: inherit;
+  }
+.card-deck .card {
+    max-width: calc(25% - 30px);
+}

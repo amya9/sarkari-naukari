@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+    Sarkari Naukari | Find Result | Latest Job 2021
+{% endblock title %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
+
+<div class="card" style="margin-left: 30px;margin-right: 30px;">
+  <div class="card-body">
+      <h1 style="color: rgb(0, 0, 0); margin-left: 30px;" class="my-3">
+      {% block innerTitle %}
+      Search for different categories
+      {% endblock innerTitle %}</h1>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="row mx-0 ">
+
+    {% for category  in category_collection  %}
+      
+    <a href="{{url_for('item')}}" class="custom-card" style="text-decoration: none;">
+      <div class="col-sm-3  my-3">
+        <div class="card ">
+          <img src="/static/image-2.jpg" class="card-img-top img-fluid" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{category.category_title}}</h5>
+            <p class="card-text">{{category.category_description}}</p>
+          </div>
+          <div class="card-footer text-right">
+            
+            <a href="{{url_for('item')}}" class="btn btn-primary ">Open All</a>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}

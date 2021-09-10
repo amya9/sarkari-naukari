@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template , request
 from flask_pymongo import PyMongo
 
 
@@ -45,7 +45,29 @@ def contact_us():
 
 @app.route("/items")
 def item():
-    return render_template("item.html")
+    category_name = request.args.get("category_name" , None)
+    print("item category name === " , category_name)
+
+    item_collection = db.get_collection(str(category_name))
+    print("item get collection === " , item_collection)
+
+    item_collection_data = item_collection.find()
+    print("item_collection_data === " , item_collection_data)
+
+    lower_caregory_name = category_name.lower()
+    category_collection = db.get_collection("category")
+
+    return render_template("item.html" ,
+                            category_collection = category_collection ,
+                            category_name = category_name ,
+                            item_collection_data = item_collection_data)
+
+
+@app.route("/item_detail")
+def item_detail():
+    item_id = request.args.get("item_id" , None)
+    print("item_id is === " , item_id)
+    return render_template("itemDetail.html")
 
 if __name__ == "__main__":
-    app.run(debug=True , port=5001)
+    app.run(debug=True , port=5003)

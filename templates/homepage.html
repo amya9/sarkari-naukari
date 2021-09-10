@@ -21,7 +21,7 @@
 
     {% for category  in category_collection  %}
       
-    <a href="{{url_for('item')}}" class="custom-card" style="text-decoration: none;">
+    <a href="{{url_for('item' , category_name = category.category_title)}}" class="custom-card" style="text-decoration: none;">
       <div class="col-sm-3  my-3">
         <div class="card ">
           <img src="/static/image-2.jpg" class="card-img-top img-fluid" alt="...">

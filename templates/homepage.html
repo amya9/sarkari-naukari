@@ -7,36 +7,52 @@
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
 
-<div class="card" style="margin-left: 30px;margin-right: 30px;">
+<div class="card" >
   <div class="card-body">
-      <h1 style="color: rgb(0, 0, 0); margin-left: 30px;" class="my-3">
+    <marquee class="txt" direction="right"><b>New job opening posted.Check it out in Job section</b>></marquee>
+      <p style="color: rgb(0, 0, 0); margin-left: 30px;" class="my-3">
       {% block innerTitle %}
-      Search for different categories
-      {% endblock innerTitle %}</h1>
+      <ul>
+        <li>New job opening is announced in bank sector<l1>
+          <li>Admission form open for engineering in private college of Delhi NCR.Check out admission section <l1>
+            <li>Result od IBPS exams announced.Check it out in result section<l1>
+              <li>Admit card releaded for BPSC exam<l1> 
+      </ul>
+      {% endblock innerTitle %}</p>
   </div>
 </div>
 
 <div class="container-fluid ">
-  <div class="row mx-0 ">
-
+  <div class="row">
+    <div class="col-2">
+      
+    </div>
+   <!--<div class="row mx-0 ">-->
+    <div class="container-fluid ">
+      <div class="row mx-0 ">
     {% for category  in category_collection  %}
       
     <a href="{{url_for('item' , category_name = category.category_title)}}" class="custom-card" style="text-decoration: none;">
-      <div class="col-sm-3  my-3">
-        <div class="card ">
-          <img src="/static/image-2.jpg" class="card-img-top img-fluid" alt="...">
+      <div class="col-3  my-3" >
+        <div class="card " >
+          <img src="/static/result.png" class="card-img-top img-fluid" alt="..." style="height: 200px;">
           <div class="card-body">
-            <h5 class="card-title">{{category.category_title}}</h5>
+            <h5 class="card-title" >{{category.category_title}}</h5>
             <p class="card-text">{{category.category_description}}</p>
           </div>
           <div class="card-footer text-right">
             
-            <a href="{{url_for('item')}}" class="btn btn-primary ">Open All</a>
+            <a href="{{url_for('item')}}" class="btn btn-primary card-btn">Open All</a>
           </div>
         </div>
       </div>
     </a>
     {% endfor %}
+      </div>
+      </div>
+    <div class="col-2">
+      
+    </div>
   </div>
 </div>
 {% endblock body %}

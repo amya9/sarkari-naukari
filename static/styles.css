@@ -1,6 +1,7 @@
 body{
-background-color: rgb(65, 53, 53);
-color: rgb(0, 0, 0);
+background-color: #D3D3D3;
+color: rgb(39, 37, 37);
+font-family: "Times New Roman", Times, serif;
 }
 
 a.custom-card:hover {
@@ -8,4 +9,26 @@ a.custom-card:hover {
   }
 .card-deck .card {
     max-width: calc(25% - 30px);
+}
+ .navbar{
+  background-color: #191970;
+}
+.footer-span{
+  background-color: #808000;
+}
+.txt{
+  color: red;
+}
+
+.card-body h5,p{
+  color:rgb(39, 37, 37) ;
+  font-weight: 400;
+}
+.card-body h5:hover, p:hover {
+  color: green;
+  font-weight: 600;
+}
+.card-footer a:hover{
+ background-color: rgb(15, 15, 15);
+ color: rgb(12, 145, 34);
 }

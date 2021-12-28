@@ -7,118 +7,102 @@
 {% if jobDetail %}
   
   
-
 <div class="container-fluid">
-<div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: blue;"> <b> {{ jobDetail.job_title | safe}} </b></h2>
-      <p class="card-text" style="color: royalblue;">{{ jobDetail.job_long_description | safe}}</p>
-      
-    </div>
-  </div>
-
   <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b> Important Dates</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <td style="color: orange; width: 50%;"><b>  Post Date </b></td>
-            <td style="color: orange;"><b> {{jobDetail.post_date | safe}} </b></td>
-          </tr>
-
-          <tr>
-            <td style="color: orange;"><b>  Post Update Date </b></td>
-            <td style="color: orange;"><b> {{jobDetail.post_update_date | safe}} </b></td>
-          </tr>
-
-          <tr>
-            <td style="color: royalblue;"><b> Application Begin </b></td>
-            <td style="color: royalblue;"><b> {{jobDetail.application_begin_date | safe}}</b></td>
-          </tr>
-
-          <tr>
-            <td style="color: red;"><b> Last Date for Apply Online</b></td>
-            <td style="color: red;"><b>{{jobDetail.last_apply_date | safe}} </b></td>
-          </tr>
-
-          <tr>
-            <td style="color: red;"><b>  Fee Payment Last Date</b></td>
-            <td style="color: red;"><b>{{jobDetail.last_payment_date | safe}} </b></td>
-          </tr>
-
+      <div class="card-body">
+        <h2 class="card-title" style="color: blue;"> <b> {{ jobDetail.job_title | safe}} </b></h2>
+        <p class="card-text" style="color: royalblue;">{{ jobDetail.job_long_description | safe}}</p>
         
-          <tr>
-            <td style="color: purple;"> <b> Exam Date </b></td>
-        
-            {% if jobDetail.exam_date == null %}
-              
-            <td style="color: rgb(133, 110, 133);"><b> Notify Soon </b></td>      
-            {% else %}
-            <td style="color: purple;"><b> {{ jobDetail.exam_date | safe}} </b></td>  
-            {% endif %}
-          </tr>
-
-          
-          <tr>
-            <td style="color: purple;"> <b> Admit card available on </b></td>
-            {% if jobDetail.admit_card_date == null %}
-              
-            <td style="color: rgb(133, 110, 133);"><b> Notify Soon </b></td>      
-            {% else %}
-            <td style="color: purple;"><b> {{jobDetail.admit_card_date | safe}} </b></td>  
-            {% endif %}
-          </tr>
-        </tbody>
-      </table>
-    
+      </div>
     </div>
-  </div>
-
-  <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b>Vacancy Details</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-         
-          <tr>
-            <td style="color: purple;"><b>  Total vacancy available </b></td>
-            <td style="color: purple;"> <b> {{jobDetail.total_vacancy_number | safe}} </b></td>
-          </tr>       
-        </tbody>
-      </table>
-    
-    </div>
-  </div>
-
-   <!-- caste_wise_vacancy -->
-   <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b>Category Wise Vacancy</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <td style="color: blue; width: 50%;"><b> {{jobDetail.caste_wise_vacancy | safe }} </b></td>
-          </tr>
-      
-        </tbody>
-      </table>
-    
-    </div>
-  </div>
-
-    <!-- post_wise_vacancy -->
+  
     <div class="card w-100">
       <div class="card-body">
-        <h2 class="card-title" style="color: seagreen;"> <b>Post Wise Vacancy</b> </h2>
+        <h2 class="card-title" style="color: seagreen;"> <b> Important Dates</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody  >
+            <tr>
+              <td style="color: orange; width: 50%;"><b>  Post Date </b></td>
+              <td style="color: orange;"><b> {{jobDetail.post_date | safe}} </b></td>
+            </tr>
+  
+            <tr>
+              <td style="color: orange;"><b>  Post Update Date </b></td>
+              <td style="color: orange;"><b> {{jobDetail.post_update_date | safe}} </b></td>
+            </tr>
+  
+            <tr>
+              <td style="color: royalblue;"><b> Application Begin </b></td>
+              <td style="color: royalblue;"><b> {{jobDetail.application_begin_date | safe}}</b></td>
+            </tr>
+  
+            <tr>
+              <td style="color: red;"><b> Last Date for Apply Online</b></td>
+              <td style="color: red;"><b>{{jobDetail.last_apply_date | safe}} </b></td>
+            </tr>
+  
+            <tr>
+              <td style="color: red;"><b>  Fee Payment Last Date</b></td>
+              <td style="color: red;"><b>{{jobDetail.last_payment_date | safe}} </b></td>
+            </tr>
+  
+          
+            <tr>
+              <td style="color: purple;"> <b> Exam Date </b></td>
+          
+              {% if jobDetail.exam_date != "" %}
+                
+              <td style="color: rgb(133, 110, 133);"><b> {{ jobDetail.exam_date | safe}}  </b></td>      
+              {% else %}
+              <td style="color: purple;"><b> Notify Soon</b></td>  
+              {% endif %}
+            </tr>
+  
+            
+            <tr>
+              <td style="color: purple;"> <b> Admit card available on </b></td>
+              {% if jobDetail.admit_card_date != "" %}
+                
+              <td style="color: rgb(133, 110, 133);"><b>  {{jobDetail.admit_card_date | safe}} </b></td>      
+              {% else %}
+              <td style="color: purple;"><b> Notify Soon</b></td>  
+              {% endif %}
+            </tr>
+          </tbody>
+        </table>
+      
+      </div>
+    </div>
+  
+    <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b>Vacancy Details</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+           
+            <tr>
+              <td style="color: purple;"><b>  Total vacancy available </b></td>
+              <td style="color: purple;"> <b> {{jobDetail.total_vacancy_number | safe}} </b></td>
+            </tr>       
+          </tbody>
+        </table>
+      
+      </div>
+    </div>
+  
+     <!-- caste_wise_vacancy -->
+     {% if jobDetail.caste_wise_vacancy != "" %}
+       
+     <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b>Category Wise Vacancy</b> </h2>
   
         <table class="table table-light table-striped table-hover" >
           <tbody>
             <tr>
-              <td style="color: blue; width: 50%;"><b> {{jobDetail.post_wise_vacancy | safe }} </b></td>
+              <td style="color: blue; width: 50%;"><b> {{jobDetail.caste_wise_vacancy | safe }} </b></td>
             </tr>
         
           </tbody>
@@ -126,155 +110,230 @@
       
       </div>
     </div>
-
-   <!-- division_wise_vacancy -->
-   {% if jobDetail.division_wise_vacancy != None %}
-     
-   <div class="card w-100">
+  
+    {% endif %}
+  
+      <!-- post_wise_vacancy -->
+      {% if jobDetail.post_wise_vacancy != "" %}
+        
+      <div class="card w-100">
+        <div class="card-body">
+          <h2 class="card-title" style="color: seagreen;"> <b>Post Wise Vacancy</b> </h2>
+    
+          <table class="table table-light table-striped table-hover" >
+            <tbody>
+              <tr>
+                <td style="color: blue; width: 50%;"><b> {{jobDetail.post_wise_vacancy | safe }} </b></td>
+              </tr>
+          
+            </tbody>
+          </table>
+        
+        </div>
+      </div>
+      {% endif %}
+  
+  
+     <!-- division_wise_vacancy -->
+     {% if jobDetail.division_wise_vacancy != "" %}
+       
+     <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;" > <b> Division Wise Vacancy</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+            <tr>
+              <td style="color: blue; width: 50%;"><b> {{jobDetail.division_wise_vacancy | safe  }} </b></td>
+            </tr>
+        
+          </tbody>
+        </table>
+      
+      </div>
+    </div>
+    {% endif %}
+  
+  
+  <!-- Eligibility criteria -->
+  {% if jobDetail.eligiblity_criteria != "" %}
+    
+    <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b> Eligliblity Criteria</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+            <tr>
+              <td style="color: black; width: 50%;"><b>  {{jobDetail.eligiblity_criteria | safe }} </b></td>
+            </tr>
+  
+          </tbody>
+        </table>
+      
+      </div>
+    </div>
+    {% endif %}
+  
+  
+  <!-- Application Fee -->
+  {% if jobDetail.application_fee != "" %}
+    
+  <div class="card w-100">
     <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;" > <b> Division Wise Vacancy</b> </h2>
-
+      <h2 class="card-title" style="color: seagreen;"> <b> Application Form </b> </h2>
+  
       <table class="table table-light table-striped table-hover" >
         <tbody>
           <tr>
-            <td style="color: blue; width: 50%;"><b> {{jobDetail.division_wise_vacancy | safe  }} </b></td>
+            <td style="color: black; width: 50%;"><b>  {{jobDetail.application_fee | safe}} </b></td>
           </tr>
-      
+  
         </tbody>
       </table>
     
     </div>
   </div>
   {% endif %}
-
-
-<!-- Eligibility criteria -->
-  <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b> Eligliblity Criteria</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <td style="color: black; width: 50%;"><b>  {{jobDetail.eligiblity_criteria | safe }} </b></td>
-          </tr>
-
-        </tbody>
-      </table>
-    
-    </div>
-  </div>
-
-<!-- Application Fee -->
-<div class="card w-100">
-  <div class="card-body">
-    <h2 class="card-title" style="color: seagreen;"> <b> Application Form </b> </h2>
-
-    <table class="table table-light table-striped table-hover" >
-      <tbody>
-        <tr>
-          <td style="color: black; width: 50%;"><b>  {{jobDetail.application_fee | safe}} </b></td>
-        </tr>
-
-      </tbody>
-    </table>
   
-  </div>
-</div>
-
-<!-- how to fill form -->
-  <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b>How to fill form</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <td style="color: blue; width: 50%;"><b> {{jobDetail.how_to_fill_form | safe }} </b></td>
-          </tr>
-
-        </tbody>
-      </table>
+  
+  <!-- how to fill form -->
+  {% if jobDetail.how_to_fill_form != "" %}
     
-    </div>
-  </div>
-
-  <!-- miscellaneous_information -->
-  <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b>Miscellaneous Information</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <td style="color: blue; width: 50%;"><b> {{jobDetail.miscellaneous_information | safe }} </b></td>
-          </tr>
+    <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b>How to fill form</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+            <tr>
+              <td style="color: blue; width: 50%;"><b> {{jobDetail.how_to_fill_form | safe }} </b></td>
+            </tr>
+  
+          </tbody>
+        </table>
       
-        </tbody>
-      </table>
-    
+      </div>
+    </div>
+    {% endif %}
+  
+  
+    <!-- miscellaneous_information -->
+    {% if jobDetail.miscellaneous_information != "" %}
+      
+    <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b>Miscellaneous Information</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+            <tr>
+              <td style="color: blue; width: 50%;"><b> {{jobDetail.miscellaneous_information | safe }} </b></td>
+            </tr>
+        
+          </tbody>
+        </table>
+      
+      </div>
+    </div>
+    {% endif %}
+  
+  
+  <!-- important Links -->
+    <div class="card w-100">
+      <div class="card-body">
+        <h2 class="card-title" style="color: seagreen;"> <b> Important Links</b> </h2>
+  
+        <table class="table table-light table-striped table-hover" >
+          <tbody>
+        
+            <tr>
+              <!-- target is used to open page in new tab -->
+              <!-- rel is used to stop tabnabbing -->
+              <td style="color: blue; width: 50%;"><b>  Apply Online </b></td>
+              <td style="color: blue;">
+                <b>
+                  {% if jobDetail.click_me_links[0].apply_online != "" %}
+                  <a href="{{jobDetail.click_me_links[0].apply_online}}"  target="_blank" rel="noopener noreferrer"> 
+                    Click Here
+                  </a>
+              
+                  {% else %}
+                  <td style="color: rgb(255, 0, 0); width: 50%;"><b>  Activate Soon </b></td>
+                  {% endif %}
+              </b>
+            </td>
+            </tr>
+  
+            <tr>
+              <td style="color: blue; width: 50%;"><b> Download Notification </b></td>
+              <td style="color: blue;"><b>
+                {% if jobDetail.click_me_links[0].download_notification != "" %}
+                <a href="{{ jobDetail.click_me_links[0].download_notification }}"  target="_blank" rel="noopener noreferrer"> 
+                Click Here </a> 
+                  
+                {% else %}
+                <td style="color: rgb(255, 0, 0); width: 50%;"><b> Activate Soon </b></td>
+  
+                {% endif %}
+              </b>
+            </td>
+            </tr>
+  
+            <tr>
+              <td style="color: blue; width: 50%;"><b> Download Admit Card </b></td>
+              <td style="color: blue;"><b>
+                {% if  jobDetail.click_me_links[0].download_admit_card != "" %}
+                <a href="{{ jobDetail.click_me_links[0].download_admit_card }}"  target="_blank" rel="noopener noreferrer"> 
+                Click Here </a>
+                  
+                {% else %}
+                <td style="color: rgb(255, 0, 0); width: 50%;"><b>Activate Soon </b></td>
+  
+                {% endif %}
+              </b>
+            </td>
+            </tr>
+  
+            <tr>
+              <td style="color: blue; width: 50%;"><b> Official Website </b></td>
+              <td style="color: blue;"><b> 
+                {% if jobDetail.click_me_links[0].official_website != "" %}
+                <a href="{{jobDetail.click_me_links[0].official_website }}"  target="_blank" rel="noopener noreferrer">
+                 Click Here </a>
+                  
+                {% else %}
+                <td style="color: rgb(255, 0, 0); width: 50%;"><b> Activate Soon </b></td>
+  
+                {% endif %}
+                 </b>
+                </td>
+            </tr>
+  
+           <tr>
+              <td style="color: blue; width: 50%;"><b> Follow Us On Youtube </b></td>
+              <td style="color: blue;"><b>
+                {% if  jobDetail.social_media_links[0].follow_on_youtube != ""  %}
+                <a href="{{jobDetail.social_media_links[0].follow_on_youtube}}"  target="_blank" rel="noopener noreferrer"> 
+                Click Here </a> 
+                  
+                {% else %}
+                <td style="color: rgb(255, 0, 0); width: 50%;"><b> Activate Soon </b></td>
+  
+                {% endif %}
+              </b>
+            </td>
+            </tr>
+            
+   
+            
+          </tbody>
+        </table>
+      
+      </div>
     </div>
   </div>
-
-<!-- important Links -->
-  <div class="card w-100">
-    <div class="card-body">
-      <h2 class="card-title" style="color: seagreen;"> <b> Important Links</b> </h2>
-
-      <table class="table table-light table-striped table-hover" >
-        <tbody>
-          <tr>
-            <!-- target is used to open page in new tab -->
-            <!-- rel is used to stop tabnabbing -->
-            <td style="color: blue; width: 50%;"><b>  Apply Online </b></td>
-            <td style="color: blue;"><b><a href="{{jobDetail.click_me_links[0].apply_online}}"  target="_blank" rel="noopener noreferrer"> 
-              Click Here </a>
-            </b>
-          </td>
-          </tr>
-
-          <tr>
-            <td style="color: blue; width: 50%;"><b> Download Notification </b></td>
-            <td style="color: blue;"><b><a href="{{ jobDetail.click_me_links[0].download_notification}}"  target="_blank" rel="noopener noreferrer"> 
-              Click Here </a> 
-            </b>
-          </td>
-          </tr>
-
-          <tr>
-            <td style="color: blue; width: 50%;"><b> Download Admit Card </b></td>
-            <td style="color: blue;"><b><a href="{{jobDetail.click_me_links[0].download_admit_card}}"  target="_blank" rel="noopener noreferrer"> 
-              Click Here </a>
-            </b>
-          </td>
-          </tr>
-
-          <tr>
-            <td style="color: blue; width: 50%;"><b> Official Website </b></td>
-            <td style="color: blue;"><b> <a href="{{jobDetail.click_me_links[0].official_website}}"  target="_blank" rel="noopener noreferrer">
-               Click Here </a>
-               </b>
-              </td>
-          </tr>
-
-         <tr>
-            <td style="color: blue; width: 50%;"><b> Follow Us On Youtube </b></td>
-            <td style="color: blue;"><b><a href="{{jobDetail.social_media_links[0].follow_on_youtube}}"  target="_blank" rel="noopener noreferrer"> 
-              Click Here </a> 
-            </b>
-          </td>
-          </tr>
-          
- 
-          </tr>
-        </tbody>
-      </table>
-    
-    </div>
-  </div>
-</div>
-
-
+  
 
 {% endif %}
     

@@ -3,6 +3,18 @@
     Sarkari Naukari | Latest Job 2021
 {% endblock title %}
 {% block body %}
-
+    
+{% for job in  item_collection  %}
+  
+<a href="{{ url_for('item_detail' ,category_name = category_name , job_id = job._id)}}" class="custom-card" style="text-decoration: none;">
+<div class="card my-3 mx-3  ">
+    <div class="card-body">
+      <h5 class="card-title">{{job.job_title | safe}}</h5>
+      <p class="card-text">{{job.job_description | safe}}</p>
+      
+    </div>
+  </div>
+   </a> 
+{% endfor %}
     
 {% endblock body %}

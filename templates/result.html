@@ -4,5 +4,16 @@
 {% endblock title %}
 {% block body %}
     
-    
+{% for result in  result_collection  %}
+  
+<a href="{{ result.result_url }}" class="custom-card" style="text-decoration: none;">
+<div class="card my-3 mx-3  ">
+    <div class="card-body">
+      <h2 class="card-title">{{result.result_title | safe }}</h2>
+      <p class="card-text">{{result.result_description | safe }}</p>
+      
+    </div>
+  </div>
+   </a> 
+{% endfor %}
 {% endblock body %}

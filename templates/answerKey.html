@@ -4,5 +4,16 @@
 {% endblock title %}
 {% block body %}
     
-    
+{% for answer_key in  answer_key_collection  %}
+  
+<a href="{{answer_key.answer_key_url}}"  target="_blank" rel="noopener noreferrer" class="custom-card" style="text-decoration: none;">
+<div class="card my-3 mx-3  ">
+    <div class="card-body">
+      <h5 class="card-title">{{answer_key.answer_key_title | safe }}</h5>
+      <p class="card-text">{{answer_key.answer_key_description | safe }}</p>
+      
+    </div>
+  </div>
+   </a> 
+{% endfor %}
 {% endblock body %}

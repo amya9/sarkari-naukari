@@ -11,48 +11,35 @@
   <div class="card-body">
     <marquee class="txt" direction="right"><b>New job opening posted.Check it out in Job section</b>></marquee>
       <p style="color: rgb(0, 0, 0); margin-left: 30px;" class="my-3">
-      {% block innerTitle %}
+    {% block innerTitle %}
       <ul>
         <li>New job opening is announced in bank sector<l1>
-          <li>Admission form open for engineering in private college of Delhi NCR.Check out admission section <l1>
-            <li>Result od IBPS exams announced.Check it out in result section<l1>
-              <li>Admit card releaded for BPSC exam<l1> 
+        <li>Admission form open for engineering in private college of Delhi NCR.Check out admission section <l1>
+        <li>Result od IBPS exams announced.Check it out in result section<l1>
+        <li>Admit card releaded for BPSC exam<l1> 
       </ul>
-      {% endblock innerTitle %}</p>
+    {% endblock innerTitle %}</p>
   </div>
 </div>
 
-<div class="container-fluid ">
-  <div class="row">
-    <div class="col-2">
-      
-    </div>
    <!--<div class="row mx-0 ">-->
-    <div class="container-fluid ">
-      <div class="row mx-0 ">
+<div class="container ">
+  <div class="row mx-0  mt-5">
     {% for category  in category_collection  %}
-      
-    <a href="{{url_for('item' , category_name = category.category_title)}}" class="custom-card" style="text-decoration: none;">
-      <div class="col-3  my-3" >
-        <div class="card " >
+    <div class="card card-custom mx-2 mb-3 " >
+        <a href="{{url_for('item' , category_name = category.category_title)}}" class="custom-card" style="text-decoration: none;">
           <img src="/static/result.png" class="card-img-top img-fluid" alt="..." style="height: 200px;">
           <div class="card-body">
             <h5 class="card-title" >{{category.category_title}}</h5>
             <p class="card-text">{{category.category_description}}</p>
           </div>
-          <div class="card-footer text-right">
-            
-            <a href="{{url_for('item')}}" class="btn btn-primary card-btn">Open All</a>
+          <div class="card-footer text-right">  
+            <a href="{{url_for('item' , category_name = category.category_title)}}" class="btn btn-primary card-btn">Open All</a>
           </div>
-        </div>
+        </a>
       </div>
-    </a>
     {% endfor %}
-      </div>
-      </div>
-    <div class="col-2">
-      
-    </div>
-  </div>
 </div>
+</div>
+
 {% endblock body %}

@@ -4,10 +4,12 @@
 {% endblock title %}
 {% block body %}
     
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for admit_card in  admit_card_collection  %}
   
+<div class="card my-1 mx-3  ">
 <a href="{{admit_card.admit_card_url}}"  target="_blank" rel="noopener noreferrer" class="custom-card" style="text-decoration: none;">
-<div class="card my-3 mx-3  ">
     <div class="card-body">
       <h2 class="card-title">{{admit_card.admit_card_title | safe}}</h2>
       <p class="card-text">{{admit_card.admit_card_description | safe }}</p>
@@ -16,4 +18,6 @@
   </div>
    </a> 
 {% endfor %}
+</div>
+</div>
 {% endblock body %}

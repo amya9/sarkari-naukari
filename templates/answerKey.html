@@ -3,17 +3,20 @@
     Sarkari Naukari | Find Answer Keys | Latest Job 2021
 {% endblock title %}
 {% block body %}
-    
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for answer_key in  answer_key_collection  %}
   
+<div class="card my-1 mx-3  ">
 <a href="{{answer_key.answer_key_url}}"  target="_blank" rel="noopener noreferrer" class="custom-card" style="text-decoration: none;">
-<div class="card my-3 mx-3  ">
     <div class="card-body">
       <h5 class="card-title">{{answer_key.answer_key_title | safe }}</h5>
       <p class="card-text">{{answer_key.answer_key_description | safe }}</p>
       
     </div>
-  </div>
-   </a> 
+  </a> 
+</div>
 {% endfor %}
+</div>
+</div>
 {% endblock body %}

@@ -3,17 +3,20 @@
     Sarkari Naukari | Find Result | Latest Job 2021
 {% endblock title %}
 {% block body %}
-    
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for result in  result_collection  %}
   
+<div class="card my-1 mx-3  ">
 <a href="{{ result.result_url }}" class="custom-card" style="text-decoration: none;">
-<div class="card my-3 mx-3  ">
     <div class="card-body">
       <h2 class="card-title">{{result.result_title | safe }}</h2>
       <p class="card-text">{{result.result_description | safe }}</p>
       
     </div>
-  </div>
-   </a> 
+  </a> 
+</div>
 {% endfor %}
+</div>
+</div>
 {% endblock body %}

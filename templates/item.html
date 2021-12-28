@@ -9,87 +9,107 @@
 
 <!-- all latest jobs list -->
 {% if category_name == "Latest Jobs" %}
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for item_data in item_collection_data  %}
 
+<div class="card mx-3 my-1">
 <a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
-  <div class="card my-3 mx-3  ">
     <div class="card-body">
       <h5 class="card-title">{{ item_data.job_title | safe}}</h5>
-      <!--<p class="card-text">{{ item_data.job_short_description | safe}}</p>-->
+      <p class="card-text">{{ item_data.job_short_description | safe}}</p>
       
     </div>
-  </div>
-</a> 
+  </a> 
+</div>
 
 {% endfor %}
+  </div>
+</div>
 {% endif %}
 
 <!-- admit card item list -->
 {% if category_name == "Admit cards" %}
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for item_data in item_collection_data  %}
   
-<a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
-  <div class="card my-3 mx-3  ">
+<div class="card  mx-3 my-1">
+<a href="{{item_data.admit_card_url}}" class="custom-card" style="text-decoration: none;">
     <div class="card-body">
       <h5 class="card-title">{{ item_data.admit_card_title | safe}}</h5>
       <p class="card-text">{{ item_data.admit_card_description | safe}}</p>
       
     </div>
-  </div>
-</a> 
+  </a> 
+</div>
 
 {% endfor %}
+ </div>
+</div>
 {% endif %}
 
 <!--  all Results  item list -->
 {% if category_name == "Results" %}
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for item_data in item_collection_data  %}
   
-<a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
-  <div class="card my-3 mx-3  ">
+<div class="card my-1 mx-3">
+<a href="{{ item_data.result_url}}" class="custom-card" style="text-decoration: none;">
     <div class="card-body">
-      <h5 class="card-title">{{ item_data.results_title | safe}}</h5>
-      <p class="card-text">{{ item_data.results_description | safe}}</p>
+      <h5 class="card-title">{{ item_data.result_title | safe}}</h5>
+      <p class="card-text">{{ item_data.result_description | safe}}</p>
       
     </div>
-  </div>
-</a> 
+  </a> 
+</div>
 
 {% endfor %}
+</div>
+</div>
 {% endif %}
 
 <!--  all Answer Key  item list -->
 {% if category_name == "Answer Key" %}
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for item_data in item_collection_data  %}
   
-<a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
-  <div class="card my-3 mx-3  ">
+<div class="card my-1 mx-3  ">
+<a href="{{item_data.answer_key_url}}" class="custom-card" style="text-decoration: none;">
     <div class="card-body">
       <h5 class="card-title">{{ item_data.answer_key_title | safe}}</h5>
       <p class="card-text">{{ item_data.answer_key_description | safe}}</p>
       
     </div>
-  </div>
-</a> 
+  </a> 
+</div>
 
 {% endfor %}
+</div>
+</div>
 {% endif %}
 
 <!--  all Admissions  item list -->
 {% if category_name == "Admissions" %}
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for item_data in item_collection_data  %}
   
-<a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
-  <div class="card my-3 mx-3  ">
+<div class="card my-1 mx-3  ">
+<a href="{{item_data.admission_url}}" class="custom-card" style="text-decoration: none;">
     <div class="card-body">
       <h5 class="card-title">{{ item_data.admission_title | safe}}</h5>
       <p class="card-text">{{ item_data.admission_description | safe}}</p>
       
     </div>
-  </div>
-</a> 
+  </a> 
+</div>
 
 {% endfor %}
+</div>
+</div>
 {% endif %}
 
 

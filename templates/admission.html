@@ -3,17 +3,21 @@
     Sarkari Naukari | Find opened admissions | Latest Job 2021
 {% endblock title %}
 {% block body %}
+
+<div class="container ">
+  <div class="row mx-0  mt-3">
 {% for admission in  admission_collection  %}
   
+<div class="card my-1 mx-3  ">
 <a href="{{admission.admission_url}}" class="custom-card" style="text-decoration: none;">
-<div class="card my-3 mx-3  ">
     <div class="card-body">
       <h5 class="card-title">{{admission.admission_title | safe }}</h5>
-      <p class="card-text">{{admission.admission_short_description | safe }}</p>
+      <p class="card-text">{{admission.admission_description | safe }}</p>
       
     </div>
-  </div>
-   </a> 
+  </a> 
+</div>
 {% endfor %}
-    
+    </div>
+    </div>
 {% endblock body %}

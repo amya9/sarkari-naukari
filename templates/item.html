@@ -14,7 +14,7 @@
 {% for item_data in item_collection_data  %}
 
 <div class="card mx-3 my-1">
-<a href="{{ url_for('item_detail' , item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
+<a href="{{ url_for('item_detail',item_id = item_data._id)}}" class="custom-card" style="text-decoration: none;">
     <div class="card-body">
       <h5 class="card-title">{{ item_data.job_title | safe}}</h5>
       <p class="card-text">{{ item_data.job_short_description | safe}}</p>

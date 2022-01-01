@@ -8,7 +8,7 @@ import random
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = "amit kumar"
 # load_dotenv() # use dotenv to hide sensitive credential as environment variables
 # mongo_client = PyMongo(app , uri="mongodb+srv://username:password@cluster0.h1dw4.mongodb.net/category?retryWrites=true&w=majority".format(username , password))
 app.config["MONGO_URI"] = "mongodb+srv://amya:amit9799@cluster0.h1dw4.mongodb.net/myAdmin?retryWrites=true&w=majority"
